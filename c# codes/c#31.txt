@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Listslab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<double> numbs = Console.ReadLine().Split().Select(double.Parse).ToList();
+
+            for (int i = 0; i < numbs.Count - 1; i++)
+            {
+                if (numbs[i] == numbs[i + 1])
+                {
+                    numbs[i] += numbs[i + 1];
+                    numbs.RemoveAt(i + 1);
+                    i = -1;
+                }
+            }
+
+            Console.WriteLine(string.Join(" ", numbs));
+        }
+    }
+}

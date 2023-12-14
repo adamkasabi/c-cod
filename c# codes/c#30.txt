@@ -1,0 +1,20 @@
+using System;
+
+namespace Matrix
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Draw(int.Parse(Console.ReadLine()));
+        }
+        static void Draw(int lo)
+        {
+            for (int ig = 0; ig < lo; ig++)
+            {
+                for (int ka = 0; ka < lo; ka++) { Console.Write(lo + " "); }
+                Console.WriteLine();
+            }
+        }
+    }
+}

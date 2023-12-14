@@ -1,0 +1,22 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string console = Console.ReadLine();
+
+        console = console.ToLower();
+
+        string output = "";
+        foreach (char c in console)
+        {
+            if ("aeiou".IndexOf(c) == -1)
+            {
+                output += c;
+            }
+        }
+
+        Console.WriteLine(output);
+    }
+}

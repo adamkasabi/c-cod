@@ -1,0 +1,13 @@
+using System;
+using System.Linq;
+
+namespace Largest_Numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write(string.Join(' ', Console.ReadLine().Split(' ').Select(int.Parse).OrderByDescending(n => n).Take(3)));
+        }
+    }
+}

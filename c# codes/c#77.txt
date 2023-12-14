@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        Dictionary<string, string> book = new Dictionary<string, string>();
+
+        string console = Console.ReadLine();
+
+        while (console != "END")
+        {
+
+            string[] commandA = console.Split();
+
+            string name = commandA[1]; 
+            
+            string command = commandA[0];
+
+            if (command == "A")
+            {
+                string phone = commandA[2];
+                book[name] = phone;
+            }
+            else if (command == "S")
+            {
+                if (book.ContainsKey(name))
+                {
+                    Console.WriteLine($"{name} -> {book[name]}");
+                }
+                else
+                {
+                    Console.WriteLine($"Contact {name} does not exist.");
+                }
+            }
+
+            console = Console.ReadLine();
+        }
+    }
+}

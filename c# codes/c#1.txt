@@ -1,0 +1,14 @@
+using System;
+using System.Linq;
+
+namespace Martios
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] numes = Console.ReadLine().Split(' ').Select(double.Parse).ToArray();
+            foreach (double numb in numes) { Console.WriteLine($"{Convert.ToDecimal(numb)} => {Convert.ToDecimal(Math.Round(numb, MidpointRounding.AwayFromZero))}"); }
+        }
+    }
+}

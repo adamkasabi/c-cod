@@ -1,0 +1,55 @@
+#wrapper{
+    width: 700px;
+    height: 730px;
+    Border: 1px solid #000000;
+    text-align: center;
+    padding: 10px;
+    background-color: #a6e1ec;
+    border-style: solid;
+    border-width: 1px;
+}
+.edno{
+    width: 200px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.dve{
+    width: 200px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.tri{
+    width: 200px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.edno1{
+    color: #2EA620;
+}
+.dve2{
+    color: #2EA620;
+}
+.tri3{
+    color: #2EA620;
+}
+.uno{
+    width: 600px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    border: 1px solid #000000;
+}
+.dos{
+    width: 600px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    border: 1px solid #000000;
+}
+.tres{
+    width: 600px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    border: 1px solid #000000;
+}

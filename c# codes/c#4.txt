@@ -1,0 +1,32 @@
+using System;
+
+namespace Method1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int dayNum = int.Parse(Console.ReadLine());
+
+            string[] daysOfTheWeek =
+            {
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            };
+
+            if (dayNum >= 1 && dayNum <= daysOfTheWeek.Length)
+            {
+                Console.WriteLine(daysOfTheWeek[dayNum - 1]);
+            }
+            else
+            {
+                Console.WriteLine("Invalid day!");
+            }
+        }
+    }
+}

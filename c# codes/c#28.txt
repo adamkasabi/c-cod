@@ -1,0 +1,28 @@
+using System;
+
+namespace Cafeterianb1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine($"{Price(Console.ReadLine(), double.Parse(Console.ReadLine())):F2}");
+        }
+        static double Price(string produkt, double quantity)
+        {
+            switch (produkt)
+            {
+                case "water":
+                    return quantity;
+                case "coke":
+                    return quantity * 1.4;
+                case "coffee":
+                    return quantity * 1.5;
+                case "snacks":
+                    return quantity * 2;
+                default:
+                    return 0;
+            }
+        }
+    }
+}

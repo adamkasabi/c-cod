@@ -1,0 +1,23 @@
+using System;
+using System.Linq;
+
+namespace Best_Word
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] words = Console.ReadLine().Split(' ').Where(n => n.Contains("est") && n.Contains('b')).ToArray();
+            if (words.Length > 0)
+            {
+                Console.WriteLine("First best word: " + words[0].ToUpper());
+                Console.WriteLine("Last best word: " + words[words.Length - 1].ToUpper());
+            }
+            else
+            {
+                Console.WriteLine("First best word: ");
+                Console.WriteLine("Last best word: ");
+            }
+        }
+    }
+}

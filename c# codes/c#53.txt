@@ -1,0 +1,20 @@
+using System;
+using System.Linq;
+
+namespace Names
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            bool isValid(string str) => str.Length > 2 && !str.Any(char.IsDigit) && char.IsUpper(str[0]);
+            if (isValid(name))
+            {
+                Console.WriteLine($"Hello, {name}!");
+                foreach (int c in name) { Console.WriteLine(c + 10); }
+            }
+            else { Console.WriteLine("Invalid name!"); }
+        }
+    }
+}

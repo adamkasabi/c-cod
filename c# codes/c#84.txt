@@ -1,0 +1,29 @@
+using System;
+using System.Linq;
+
+
+namespace adam
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var numbers = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+
+            Random rnd = new Random();
+
+            for (var i = 0; i < numbers.Length; i++)
+            {
+                var randomIndex = rnd.Next(0, numbers.Length);
+                var temp = numbers[i];
+                numbers[i] = numbers[randomIndex];
+                numbers[randomIndex] = temp;
+
+            }
+            foreach (var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+        }
+    }
+}

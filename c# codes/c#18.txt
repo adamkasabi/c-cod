@@ -1,0 +1,32 @@
+using System;
+
+namespace Small
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int num = int.Parse(Console.ReadLine());
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(Comparing(n, num, num1));
+        }
+
+        static int Comparing(int first, int second, int third)
+        {
+            if (first < second && first < third)
+            {
+                return first;
+            }
+            else if (second < first && second < third)
+            {
+                return second;
+            }
+            else
+            {
+                return third;
+            }
+        }
+    }
+}

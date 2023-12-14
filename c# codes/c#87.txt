@@ -1,0 +1,21 @@
+﻿int rows = int.Parse(Console.ReadLine());
+Dictionary<string, List<double>> list = new Dictionary<string, List<double>>();
+
+for(int i = 0; i < rows; i++)
+{
+    string student = Console.ReadLine();
+    double grade = double.Parse(Console.ReadLine());
+    if (!list.ContainsKey(student))
+    {
+        list.Add(student, new List<double> {grade});
+    }
+    else
+    {
+        list[student].Add(grade);
+    }
+}
+
+foreach(var l in list.Where(x=> x.Value.Average() >= 4.50).OrderByDescending(x=>x.Value.Average()))
+{
+    Console.WriteLine($"{l.Key} -> {l.Value.Average():F2}");
+}

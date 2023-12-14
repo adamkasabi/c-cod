@@ -1,0 +1,32 @@
+﻿int quantity = int.Parse(Console.ReadLine());
+int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+Queue<int> vs = new Queue<int>();
+
+for (int i = 0; i < input.Length; i++)
+{
+    vs.Enqueue(input[i]);
+}
+
+Console.WriteLine(vs.Max());
+
+for (int i = 0; i < vs.Count; i++)
+{
+    if (quantity - vs.Peek() >= 0)
+    {
+        quantity -= vs.Peek();
+        vs.Dequeue();
+    }
+    else
+    {
+        for (int j = 0; j < vs.Count; j++)
+        {
+            Console.Write("Orders left: ");
+            Console.Write($"{vs.Dequeue()} ");
+        }
+    }
+}
+
+if (quantity >= 0)
+{
+    Console.WriteLine("Orders Complete");
+}

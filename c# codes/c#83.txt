@@ -1,0 +1,36 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int n = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < n; i++)
+        {
+     
+            string line = Console.ReadLine();
+            int start = line.IndexOf('@');
+            int end = line.IndexOf('|', start);
+            int age = line.IndexOf('#');
+            int age1 = line.IndexOf('*', age);
+
+            if (start == -1 || end == -1 || age == -1 || age1 == -1)
+            {
+                Console.WriteLine("Invalid data format.");
+                continue;
+            }
+
+            string name = line.Substring(start + 1, end - start - 1);
+            string ageStr = line.Substring(age + 1, age1 - age - 1);
+
+            if (!int.TryParse(ageStr, out int agi))
+            {
+                Console.WriteLine("Invalid age format.");
+                continue;
+            }
+
+            Console.WriteLine($"{name} is {agi} years old.");
+        }
+    }
+}

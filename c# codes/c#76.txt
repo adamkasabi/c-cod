@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<int> numbers = new List<int>();
+        string input = Console.ReadLine();
+        string[] inputArray = input.Split();
+
+        // convert input to list of integers
+        for (int i = 0; i < inputArray.Length; i++)
+        {
+            numbers.Add(int.Parse(inputArray[i]));
+        }
+
+        // process user commands
+        while (true)
+        {
+            string command = Console.ReadLine();
+
+            if (command == "add")
+            {
+                Add(numbers);
+            }
+            else if (command == "multiply")
+            {
+                Multiply(numbers);
+            }
+            else if (command == "subtract")
+            {
+                Subtract(numbers);
+            }
+            else if (command == "print")
+            {
+                Print(numbers);
+            }
+            else if (command == "end")
+            {
+                break;
+            }
+        }
+    }
+
+    static void Add(List<int> numbers)
+    {
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            numbers[i]++;
+        }
+    }
+
+    static void Multiply(List<int> numbers)
+    {
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            numbers[i] *= 2;
+        }
+    }
+
+    static void Subtract(List<int> numbers)
+    {
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            numbers[i]--;
+        }
+    }
+
+    static void Print(List<int> numbers)
+    {
+        foreach (int number in numbers)
+        {
+            Console.Write(number + " ");
+        }
+        Console.WriteLine();
+    }
+}

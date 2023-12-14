@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Listlab1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> numbs = Console.ReadLine().Split().Select(int.Parse).ToList();
+
+            List<int> result = new List<int>();
+
+            for (int i = 0; i < numbs.Count / 2; i++)
+            {
+                result.Add(numbs[i] + numbs[numbs.Count - 1 - i]);
+            }
+
+            if (numbs.Count % 2 != 0)
+            {
+                result.Add(numbs[numbs.Count / 2]);
+            }
+
+            Console.WriteLine(string.Join(" ", result));
+        }
+    }
+}

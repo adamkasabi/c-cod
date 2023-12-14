@@ -1,0 +1,19 @@
+﻿int[] array = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+Stack<int> stack = new Stack<int>(array);
+int capacity = int.Parse(Console.ReadLine());
+int sum = 0;
+int racks = 1;
+while (stack.Count > 0)
+{
+    sum += stack.Peek();
+    if (sum <= capacity)
+    {
+        stack.Pop();
+    }
+    else
+    {
+        racks++;
+        sum = 0;
+    }
+}
+Console.WriteLine(racks);

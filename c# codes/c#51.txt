@@ -1,0 +1,13 @@
+using System;
+
+namespace Numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            static int Square(int x) => x * x;
+            Console.WriteLine(Square(int.Parse(Console.ReadLine())));
+        }
+    }
+}

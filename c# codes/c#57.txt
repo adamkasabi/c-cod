@@ -1,0 +1,14 @@
+using System;
+using System.Linq;
+
+namespace Wordsin_Plural
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(string.Join('\n', Console.ReadLine().Split(' ').Skip(1).Where(n => n.Length < 5).Select(n => n = n + "s")
+                                               .OrderBy(n => n).OrderBy(n => n.Length).ToArray()));
+        }
+    }
+}

@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+       
+        Dictionary<string, string> book = new Dictionary<string, string>();
+
+        
+        while (true)
+        {
+            string console = Console.ReadLine();
+            if (console == "END")
+            {
+                break;
+            }
+
+            string[] command = console.Split();
+            if (command[0] == "A")
+            {
+                string name = command[1];
+                string number = command[2];
+              book[name] = number;
+            }
+            else if (command[0] == "ListAll")
+            {
+                
+                List<string> keys = new List<string>(book.Keys);
+                keys.Sort();
+
+                foreach (string key in keys)
+                {
+                    Console.WriteLine(key + " - " + book[key]);
+                }
+            }
+        }
+    }
+}
+

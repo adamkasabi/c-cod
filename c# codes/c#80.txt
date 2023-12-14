@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string email = Console.ReadLine();
+        int sumAfterAt = 0;
+        int sumBeforeAt = 0;
+
+        for (int i = 0; i < email.Length; i++)
+        {
+            if (email[i] == '@')
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    sumBeforeAt += email[j];
+                }
+                for (int j = i + 1; j < email.Length; j++)
+                {
+                    sumAfterAt += email[j];
+                }
+                break;
+            }
+        }
+
+        int result = sumBeforeAt - sumAfterAt;
+        if (result >= 0)
+        {
+            Console.WriteLine("Call her!");
+        }
+        else
+        {
+            Console.WriteLine("She is not the one.");
+        }
+    }
+}
+

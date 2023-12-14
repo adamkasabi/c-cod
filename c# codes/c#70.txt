@@ -1,0 +1,19 @@
+using System;
+using System.Linq;
+
+namespace Find_Evens_or_Odds
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] range = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            Predicate<int> cond = n => n % 2 == 0;
+            if (Console.ReadLine() == "odd") { cond = n => n % 2 != 0; }
+            for (int i = range[0]; i <= range[1]; i++)
+            {
+                if (cond(i)) { Console.Write(i + " "); }
+            }
+        }
+    }
+}

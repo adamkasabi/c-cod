@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace List4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> numbs = Console.ReadLine().Split().Select(int.Parse).ToList();
+
+            numbs.RemoveAll(x => x < 0);
+            numbs.Reverse();
+
+            if (numbs.Count == 0)
+            {
+                Console.WriteLine("empty");
+            }
+            else
+            {
+                Console.WriteLine(string.Join(" ", numbs));
+            }
+        }
+    }
+}

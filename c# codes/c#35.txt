@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+ 
+namespace _05.BombNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> listOfintegers = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToList();
+ 
+ 
+            List<int> bombNumAndItsNeighbours = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToList();
+            int bombNum = bombNumAndItsNeighbours[0];
+            int neighboursNum = bombNumAndItsNeighbours[1];
+ 
+ 
+            for (int i = 0; i < listOfintegers.Count; i++)
+            {
+                if (listOfintegers[i] == bombNum)
+                {
+                    int j = 0;
+                    while (j < neighboursNum && i != 0)
+                    {
+                        listOfintegers.RemoveAt(i - 1);
+                        i--;
+                        j++;
+                    }
+ 
+                    j = 0;
+                    while (j < neighboursNum && i != (listOfintegers.Count - 1))
+                    {
+                        listOfintegers.RemoveAt(i + 1);
+                        j++;
+                    }
+                        listOfintegers.RemoveAt(i);
+                }
+            }
+ 
+ 
+                int sum = 0;
+ 
+                for (int i = 0; i < listOfintegers.Count; i++)
+                {
+                    sum += listOfintegers[i];
+                }
+ 
+                Console.WriteLine(sum);
+ 
+ 
+        }
+    }
+}

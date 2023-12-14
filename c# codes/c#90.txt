@@ -1,0 +1,3 @@
+function smetalo(){
+    console.log(97);
+  }

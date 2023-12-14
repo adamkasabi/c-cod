@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace zadacha_2
+{
+    internal class Program
+    {
+         static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int[] tmp = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            Queue<int> o = new Queue<int>();
+            foreach (int v in tmp) o.Enqueue(v);
+
+            while (true)
+            {
+                if (o.Count == 0)
+                {
+                    Console.WriteLine(tmp.Max());
+                    Console.WriteLine("All orders are completed");
+                    break;
+                }
+                int v = o.Peek();
+                if (n - v >= 0)
+                {
+                    n -= v;
+                    o.Dequeue();
+                }
+                else break;
+            }
+
+            if (o.Count != 0)
+            {
+                Console.WriteLine(tmp.Max());
+                Console.WriteLine("Orders left: " + string.Join(" ", o));
+            }
+        }
+    }
+}

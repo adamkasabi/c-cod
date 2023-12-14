@@ -1,0 +1,37 @@
+using System;
+
+namespace Metho2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double grd = double.Parse(Console.ReadLine());
+
+            GradeDefinition(grd);
+        }
+        static void GradeDefinition(double grd)
+        {
+            if (grd >= 2.00 && grd <= 2.99)
+            {
+                Console.WriteLine("Fail");
+            }
+            else if (grd >= 3.00 && grd <= 3.49)
+            {
+                Console.WriteLine("Poor");
+            }
+            else if (grd >= 3.50 && grd <= 4.49)
+            {
+                Console.WriteLine("Good");
+            }
+            else if (grd >= 4.50 && grd <= 5.49)
+            {
+                Console.WriteLine("Very good");
+            }
+            else if (grd >= 5.50 && grd <= 6.00)
+            {
+                Console.WriteLine("Excellent");
+            }
+        }
+    }
+}

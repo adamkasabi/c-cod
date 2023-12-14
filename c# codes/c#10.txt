@@ -1,0 +1,30 @@
+using System;
+
+namespace Method1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = int.Parse(Console.ReadLine());
+
+            NumberSign(num);
+        }
+
+        static void NumberSign(int numb)
+        {
+            if (numb < 0)
+            {
+                Console.WriteLine($"The number {numb} is negative.");
+            }
+            else if (numb > 0)
+            {
+                Console.WriteLine($"The number {numb} is positive.");
+            }
+            else
+            {
+                Console.WriteLine($"The number {numb} is zero.");
+            }
+        }
+    }
+}
